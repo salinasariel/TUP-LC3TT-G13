@@ -26,7 +26,7 @@ const handleSubmit = (e) => {
         
         <section >
 
-            <form className="form"
+            <form className="form scale-up-center"
             onSubmit={handleSubmit}>
                 <h1>Login</h1>
                 <input placeholder="Usuario" class="form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" type="text"
@@ -38,7 +38,7 @@ const handleSubmit = (e) => {
                 <button class="btn btn-light">Login</button>
                 <a href="">Prefiero registrarme.</a>
             </form>
-            {error && <p className="mesageError">Todos los campos son obligatorios</p>}
+            {error && <p className="mesageError scale-up-center">Todos los campos son obligatorios</p>}
         </section>
     )
 }

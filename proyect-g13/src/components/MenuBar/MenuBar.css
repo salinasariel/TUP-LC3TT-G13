@@ -11,3 +11,4 @@
     padding-left: 10px;
     
 }
+.scale-up-vertical-top{animation:scale-up-vertical-top 0.4s linear} @keyframes scale-up-vertical-top{0%{transform:scaleY(.4);transform-origin:center top}100%{transform:scaleY(1);transform-origin:center top}}

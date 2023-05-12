@@ -3,7 +3,7 @@ import Logo from "../../../src/Img/logoFootbal.png"
 
 function MenuBar()  {
   return (
-    <nav  class=" navbar navbar-expand-lg navbar-light backcolor">
+    <nav  class="scale-up-vertical-top navbar navbar-expand-lg navbar-light backcolor">
       <div>
         <img class="high" src={Logo} />
         </div>
