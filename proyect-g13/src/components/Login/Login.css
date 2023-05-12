@@ -24,8 +24,6 @@
     padding: 30px;
     border-radius: 30px;
 }
-body{
-    background-image: url("../../Img/background-blurred.jpg");
-}
+
 
 .scale-up-center{animation:scale-up-center 0.3s; } @keyframes scale-up-center{ 0%{transform:scale(.5)} 100%{transform:scale(1)} }

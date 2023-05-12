@@ -2,7 +2,10 @@ import './App.css';
 import MenuBar from './components/MenuBar/MenuBar';
 import Login from './components/Login/Login';
 
+
+
 import { useState } from 'react';
+import HomePage from './components/HomePage/HomePage';
 
 function App() {
 const [user, setUser] = useState([])
@@ -12,7 +15,7 @@ const [user, setUser] = useState([])
       {
         !user.length > 0
           ? <Login setUser={setUser} />
-          : <MenuBar />
+          : <HomePage />
       }
     </div>
   );
