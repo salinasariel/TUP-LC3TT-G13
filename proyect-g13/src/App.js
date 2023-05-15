@@ -25,7 +25,7 @@ const logoutHandler = () => {
 const router = createBrowserRouter([
   {
   path:"/Login",
-  Element: <Login onLogin={loginHandler} />,
+  Element: <Login onLogin={loginHandler}/>
 },
 {
   path:"/home",
@@ -41,10 +41,8 @@ const router = createBrowserRouter([
 },
 ])
 
-  return( 
-  <RouterProvider router={router} />
+  return <RouterProvider router={router} />
   
-  );
 }
 
 export default App;

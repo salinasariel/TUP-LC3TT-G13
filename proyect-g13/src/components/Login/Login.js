@@ -45,6 +45,7 @@ const singInHandler = () => {
 
 
     return (
+        <MenuBar />,
        <div className="login-container">
         <div className="login-box">
             <h4 className={`${name.length === 0 && "red-text"}`}>  
