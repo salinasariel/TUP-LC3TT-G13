@@ -11,7 +11,6 @@ import NotFoundd from './components/routes/NotFoundd';
 
 
 function App() {
-const [user, setUser] = useState([])
 const [isLoggedIn, setIsLoggedIn] = useState(false)
 
 
@@ -25,7 +24,7 @@ const logoutHandler = () => {
 
 const router = createBrowserRouter([
   {
-  path:"/Login",
+  path:"/login",
   Element: <Login onLogin={loginHandler}/>
 },
 {
@@ -44,6 +43,6 @@ const router = createBrowserRouter([
 
   return <RouterProvider router={router} />
   
-}
+};
 
 export default App;

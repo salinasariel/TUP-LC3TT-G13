@@ -45,7 +45,7 @@ const singInHandler = () => {
 
 
     return (
-        <MenuBar />,
+        
        <div className="login-container">
         <div className="login-box">
             <h4 className={`${name.length === 0 && "red-text"}`}>  
@@ -67,6 +67,7 @@ const singInHandler = () => {
                 className="input-control"
                 placeholder="Password"
                 type="password"
+                ref={passwordRef}
                 />
             </div>
             {errors[1].isError && <p>{errors[1].text}</p>}

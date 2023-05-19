@@ -1,4 +1,5 @@
 import React from "react";
+import { Button } from "react-bootstrap";
 
 import { useNavigate } from "react-router-dom";
 
@@ -7,16 +8,16 @@ const NotFoundd = () => {
     
 
     const goBackHandler = () => {
-        navigation("/Login");
+        navigation("/login");
     };
 
     return (
 
     <div className="d-flex flex-column justify-content-center aling-item-center">
      <h2> La pagina no esta disponible </h2>
-        <button className="w-25">
+        <Button className="w-25" onClick={goBackHandler}>
             volver al login
-        </button>
+        </Button>
     </div>
     
     );
