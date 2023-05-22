@@ -24,8 +24,8 @@ const nameHandler = (e) => {
 const singInHandler = () => {
     if(name.length === 0){
         nameRef.current.focus();
-        nameRef.current.borderColor = "red";
-        nameRef.current.outLine = "none";
+        nameRef.current.style.borderColor = "red";
+        nameRef.current.style.outLine = "none";
         const newErrors = [...errors];
         newErrors[0].isError = true;
         setErrors(newErrors);
@@ -45,7 +45,7 @@ const singInHandler = () => {
 
 
     return (
-        
+        <MenuBar/>,
        <div className="login-container">
         <div className="login-box">
             <h4 className={`${name.length === 0 && "red-text"}`}>  
