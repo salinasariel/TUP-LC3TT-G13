@@ -1,47 +1,25 @@
-import { useState } from 'react';
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
-
 import './App.css';
 
-import HomePage from './components/HomePage/HomePage';
+
 import Login from './components/Login/Login';
-import Protected from "./components/routes/Protected";
-import NotFoundd from './components/routes/NotFoundd';
+import HomePage from './components/HomePage/HomePage';
 
+import { useState } from 'react';
 
-function App() {
-const [isLoggedIn, setIsLoggedIn] = useState(false)
+const App = () => {
 
+const [user, setUser] = useState([])
 
-const loginHandler = () => {
-  setIsLoggedIn(true)
+  return (
+    <>
+      <div className='App'>
+        {
+          !user.length > 0
+            ? <Login setUser={setUser} />
+            : <HomePage />
+        }
+      </div>
+    </>
+  );
 }
-
-const logoutHandler = () => {
-  setIsLoggedIn(false)
-}
-
-const router = createBrowserRouter([
-  {
-  path:"/login",
-  Element: <Login onLogin={loginHandler}/>
-},
-{
-  path:"/home",
-  Element: (
-    <Protected isSignedIn={isLoggedIn}>
-      <HomePage onLogout={logoutHandler} />
-    </Protected>
-  ),
-},
-{
-  path:"*",
-  Element: <NotFoundd />
-},
-])
-
-  return <RouterProvider router={router} />
-  
-};
-
 export default App;

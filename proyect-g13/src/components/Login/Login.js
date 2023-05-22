@@ -1,84 +1,49 @@
-import { useNavigate } from "react-router-dom"
-import MenuBar from "../MenuBar/MenuBar"
 import "./Login.css"
+import MenuBarLogin from "../MenuBar/MenuBarLogin";
+import react from "react"
+import { useState } from "react"
+import { Button } from "react-bootstrap"
 
-import { useRef, useState } from "react"
+const Login = ({ setUser }) => {
 
-
-export function Login({onLogin}){
-const [name, setName] = useState("")
-const[errors, setErrors] = useState([
-    {text: "Nombre no completado", isError: false},
-    {text: "password no completado", isError: false}
-])
-
-const nameRef = useRef(null)
-const passwordRef = useRef(null)
-
-const navigation = useNavigate()
-
-const nameHandler = (e) => {
-    setName(e.target.value)
-    }
-    
-const singInHandler = () => {
-    if(name.length === 0){
-        nameRef.current.focus();
-        nameRef.current.style.borderColor = "red";
-        nameRef.current.style.outLine = "none";
-        const newErrors = [...errors];
-        newErrors[0].isError = true;
-        setErrors(newErrors);
-        return;
-    }
-    if(passwordRef.current.value.length === 0){
-        passwordRef.current.focus();
-        const newErrors = [...errors];
-        newErrors[1].isError = true;
-        setErrors(newErrors);
-        return;
-    }
-}
-
-    onLogin();
-    navigation("/home");
-
-
-    return (
-        <MenuBar/>,
-       <div className="login-container">
-        <div className="login-box">
-            <h4 className={`${name.length === 0 && "red-text"}`}>  
-               !Reserva tu turno ya!
-            </h4>
-            <div classname="input-container">
-                <input
-                    className="input-control"
-                    placeholder="Email"
-                    type="email"
-                    onChange={nameHandler} 
-                    value={name}
-                    ref={nameRef} 
-                />       
-            </div>
-            {errors[0].isError && <p>{errors[0].text}</p>}
-            <div className="input-container">
-                <input
-                className="input-control"
-                placeholder="Password"
-                type="password"
-                ref={passwordRef}
-                />
-            </div>
-            {errors[1].isError && <p>{errors[1].text}</p>}
-            <button onClick={singInHandler} className="signin-button" type="button">
-                Iniciar Sesion
-            </button>
-
-        </div>
+    const [name, setName] = useState("")
+    const [password, setPassword] = useState("")
+    const[error, setError] = useState(false)
         
-       </div>
-    );
+    
+    const handleSubmit = (e) => {
+        e.preventDefault()
+    
+        if(name === "" || password === ""){
+            setError(true)
+            return
+        }
+    
+        setError(false)
+    
+        setUser([name])
+    }
+    return(
+        <>
 
+            <MenuBarLogin />
+            <section >
+
+                <form className="form scale-up-center"
+                onSubmit={handleSubmit}>
+                    <h1 class="titelLog">Iniciar Sesion</h1>
+                    <input placeholder="Usuario" class="usuario_estilo form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" type="text"
+                    value={name}
+                    onChange={e => setName(e.target.value)}></input>
+                    <input placeholder="Contraseña" class="contrasenia form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" type="password"
+                    value={password}
+                    onChange={e => setPassword(e.target.value)}></input>
+                    <button class="btn btn-light justify-content-center mt-2 ">Login</button>
+                    <a  class="register ml-2" href="">Registrarme.</a>
+                </form>
+                {error && <p className="mesageError scale-up-center">Todos los campos son obligatorios</p>}
+            </section>
+        </>
+    );
 };
- export default Login;
+export default Login;
