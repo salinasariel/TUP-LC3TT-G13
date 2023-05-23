@@ -38,7 +38,7 @@ const Login = ({ setUser }) => {
                     <input placeholder="Contraseña" class="contrasenia form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" type="password"
                     value={password}
                     onChange={e => setPassword(e.target.value)}></input>
-                    <button class="btn btn-light justify-content-center mt-2 ">Login</button>
+                    <button class="btn btn-light justify-content-center mt-2 ">Login</button> <br></br>
                     <a  class="register ml-2" href="">Registrarme.</a>
                 </form>
                 {error && <p className="mesageError scale-up-center">Todos los campos son obligatorios</p>}
