@@ -3,16 +3,19 @@ import MenuBarLogin from "../MenuBar/MenuBarLogin";
 import react from "react"
 import { useState } from "react"
 import { Button } from "react-bootstrap"
+import { useNavigate } from "react-router-dom";
 
 const Login = ({ setUser }) => {
-
+    
     const [name, setName] = useState("")
     const [password, setPassword] = useState("")
     const[error, setError] = useState(false)
+    const navigate = useNavigate()
         
     
     const handleSubmit = (e) => {
         e.preventDefault()
+
     
         if(name === "" || password === ""){
             setError(true)
@@ -22,6 +25,12 @@ const Login = ({ setUser }) => {
         setError(false)
     
         setUser([name])
+        navigate('/homepage', {
+            replace: true, 
+            state: {
+                logged:true,
+            }
+        })
     }
     return(
         <>

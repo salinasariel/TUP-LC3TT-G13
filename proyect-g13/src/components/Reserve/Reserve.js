@@ -1,5 +1,6 @@
 import "./Reserve.css";
 import React from 'react';
+import MenuBar from "../MenuBar/MenuBar";
 
 const Reserve = () =>{
     
@@ -18,6 +19,7 @@ const Reserve = () =>{
     }
 
     return(
+        <MenuBar/>,
         <div className="backplate">
             <h1>Reservar</h1>
             
