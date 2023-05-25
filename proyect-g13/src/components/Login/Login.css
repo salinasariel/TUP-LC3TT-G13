@@ -51,3 +51,10 @@ body{
 background-color: #81c7848d;
 }
 .scale-up-center{animation:scale-up-center 0.3s; } @keyframes scale-up-center{ 0%{transform:scale(.5)} 100%{transform:scale(1)} }
+
+@media (max-width: 830px) {
+  .form{
+      margin-left: 5%;
+      margin-right: 5%;
+  }
+}

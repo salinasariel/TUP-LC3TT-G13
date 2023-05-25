@@ -11,3 +11,9 @@
     padding: 30px;
     border-radius: 30px;
 }
+@media (max-width: 830px) {
+    .backplate{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+}
