@@ -1,10 +1,12 @@
 import "./Reserve.css";
-import React from 'react';
+import React, { useState } from 'react';
 import MenuBar from "../MenuBar/MenuBar";
 
-const Reserve = () =>{
+const Reserve = ({ onFinish }) =>{
     
     const [stadiums, setStadiums]= React.useState([])
+    const [stadiumId,setStadiumId] = React.useState();
+
     React.useEffect(() =>{
         //console.log('useEffect')
         getData()
@@ -18,8 +20,12 @@ const Reserve = () =>{
         setStadiums(ourStadiums)
     }
 
+    const handleStadium = (id) => {
+        console.log(id)
+        setStadiumId(id);
+    }
+
     return(
-        <MenuBar/>,
         <div className="backplate">
             <h1>Reservar</h1>
             
@@ -29,12 +35,14 @@ const Reserve = () =>{
                 <select className="form-select" name="Canchas">
                         {
                             stadiums.map(item =>(
-                                <option key="item.id">{item.name}</option>
+                                <option key="item.id" onClick={() => handleStadium(item.id)}>{item.name}</option>
                             ))
                         }                   
 
                 </select> <br></br>
-                <button className="btn btn-success">Continuar</button>
+                <button className="btn btn-success" onClick={() => onFinish(stadiumId)}>
+                    Continuar
+                </button>
             </form>
         </div>
     );
