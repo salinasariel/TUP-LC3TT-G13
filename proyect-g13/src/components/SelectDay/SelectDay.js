@@ -23,13 +23,13 @@ const SelectDay = ({ stadiumId }) => {
         if(stadium.monday)
             days.push('lunes')
         if(stadium.thuesday)
-            days.push('thuesday')
+            days.push('martes')
         if(stadium.whendesday)
-            days.push('whendesday')
+            days.push('miercoles')
         if(stadium.thursday)
-            days.push('thursday')
+            days.push('jueves')
         if(stadium.friday)
-            days.push('friday')
+            days.push('viernes')
         return days;
     }
 
