@@ -1,13 +1,12 @@
 import "./Reserve.css";
-import React, { useState } from 'react';
-import MenuBar from "../MenuBar/MenuBar";
+import React, { useState, useEffect } from 'react';
 
 const Reserve = ({ onFinish }) =>{
     
-    const [stadiums, setStadiums]= React.useState([])
-    const [stadiumId,setStadiumId] = React.useState();
+    const [stadiums, setStadiums]= useState([])
+    const [stadiumId,setStadiumId] = useState();
 
-    React.useEffect(() =>{
+    useEffect(() =>{
         //console.log('useEffect')
         getData()
         
