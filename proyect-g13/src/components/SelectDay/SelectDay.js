@@ -22,9 +22,9 @@ const SelectDay = ({ stadiumId }) => {
         const days = [];
         if(stadium.monday)
             days.push('lunes')
-        if(stadium.thuesday)
+        if(stadium.tuesday)
             days.push('martes')
-        if(stadium.whendesday)
+        if(stadium.wednesday)
             days.push('miercoles')
         if(stadium.thursday)
             days.push('jueves')
