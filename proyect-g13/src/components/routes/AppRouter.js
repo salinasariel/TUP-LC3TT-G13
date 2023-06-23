@@ -5,6 +5,7 @@ import Login from '../Login/Login'
 import HomePage from '../HomePage/HomePage'
 import SelectDay from '../SelectDay/SelectDay'
 import Register from '../Login/Register'
+import FinishReserve from '../FinishReserve/FinishReserve'
 
 const AppRouter = () => {
   // const navigate = useNavigate()
@@ -22,6 +23,7 @@ const AppRouter = () => {
         <Route path='/register' element={<Register/>}/>
         <Route path='/homepage' element={<HomePage/>}/>
         <Route path='/selectday' element={<SelectDay/>}/>
+        <Route path='/finishreserve' element={<FinishReserve/>}/>
       </Routes>
     </BrowserRouter>
   )

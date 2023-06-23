@@ -19,7 +19,7 @@ const Login = () => {
     const handleSubmit = (e) => {
         e.preventDefault()
         if(validated()){
-            fetch("https://644bfc2317e2663b9dfd613c.mockapi.io/api/v1/"+name, {
+            fetch("https://644bfc2317e2663b9dfd613c.mockapi.io/api/v1/users/"+ name, {
                method: 'GET',
                headers: {'content-type':'application/json'}
             })
@@ -30,7 +30,7 @@ const Login = () => {
                     toast.error('Ingrese un usuario existente')
                 }else{
                     if(result.password ===password){
-                        toast.succes('Usuario valido')
+                        toast.success('Usuario valido')
                         sessionStorage.setItem('usuario', name)
                         navigate('/homepage')
                     }else{
