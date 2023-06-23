@@ -1,57 +1,41 @@
 import { Link } from "react-router-dom";
 import React, { useState } from 'react';
 import MenuBar from "../MenuBar/MenuBar";
+import { useLocation } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 
-const SelectDay = ({ stadiumId }) => {
-    
-    const [stadiumsDisponibility, setStadiumsDisponibility] = React.useState([])
-    
-    React.useEffect(() =>{
-        if(stadiumId != -1)
-            getData()
-    }, [stadiumId]);
 
-    const getData = async () => {
-        const data = await fetch(`https://644bfc2317e2663b9dfd613c.mockapi.io/api/v1/stadium/${stadiumId}`)
-        const stadium = await data.json()
-        setStadiumsDisponibility(getDays(stadium))
-    }
+const SelectDay = () => {
 
-    const getDays = (stadium) => {
-        const days = [];
-        if(stadium.monday)
-            days.push('lunes')
-        if(stadium.tuesday)
-            days.push('martes')
-        if(stadium.wednesday)
-            days.push('miercoles')
-        if(stadium.thursday)
-            days.push('jueves')
-        if(stadium.friday)
-            days.push('viernes')
-        return days;
-    }
-
+    const location = useLocation();
+    const { id, name, monday, tuesday, wednesday, thursday, friday } = location.state;
+    const navigate = useNavigate();
+    const handleClick = () => {
+        navigate('/homepage');
+      };  
+      const okReserve = () => {
+        navigate('/finishreserve');
+      };  
     return(
-        <MenuBar/>,
+        <>
+        <MenuBar/> 
         <div className="backplate">
-            <h1>Seleccione dia</h1>
+           
+            <h3>Reservar en {name}</h3>
+            <p>Por favor seleccione el dia que desea reservar </p>
             
-            <form>
-                <label>Seleccione el dia</label>
-                <select className="form-select" name="Canchas">
-                        {
-                            stadiumsDisponibility.map(day =>(
-                                <option key="day">{day}</option>
-                            ))
-                        }                   
+            {monday ? (<button onClick={okReserve} className="btn btn-success">LUNES</button>) : (<button disabled className="btn btn-danger">LUNES</button>)}
+            {tuesday ? (<button onClick={okReserve} className="btn btn-success">MARTES</button>) : (<button disabled className="btn btn-danger">MARTES</button>)}
+            {wednesday ? (<button onClick={okReserve} className="btn btn-success">MIERCOLES</button>) : (<button disabled className="btn btn-danger">MIERCOLES</button>)}
+            {thursday ? (<button onClick={okReserve} className="btn btn-success">JUEVES</button>) : (<button disabled className="btn btn-danger">JUEVES</button>)}
+            {friday ? (<button onClick={okReserve} className="btn btn-success">VIERNES</button>) : (<button disabled className="btn btn-danger">VIERNES</button>)}
+            <br></br><button onClick={handleClick} className='btn btn-secondary justify-content-center mt-2 ' href='/homepage' >Regresar</button>
 
-                </select> <br></br>
-                <button className="btn btn-success">Continuar</button>
-            </form>
         </div>
-    );
-
+        </>
+        
+        
+    )
 }
 export default SelectDay;

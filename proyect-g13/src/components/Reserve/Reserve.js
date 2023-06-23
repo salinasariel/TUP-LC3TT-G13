@@ -1,3 +1,4 @@
+import SelectStadium from "../SelectStadium/SelectStadium";
 import "./Reserve.css";
 import React, { useState, useEffect } from 'react';
 
@@ -23,26 +24,20 @@ const Reserve = ({ onFinish }) =>{
         console.log(id)
         setStadiumId(id);
     }
+    //const StadiumList = stadiums.map(item =>(
+    //    <option key="item.id" onClick={() => handleStadium(item.id)}>{item.name}</option>
+    //))
+    const StadiumList = stadiums.map((v) =>{
+        return <SelectStadium name= {v.name} address= {v.address} id={v.id} monday= {v.monday} tuesday={v.tuesday} wednesday={v.wednesday} thursday={v.thursday} friday={v.friday}/>
+    })
 
     return(
         <div className="backplate">
             <h1>Reservar</h1>
+            <p>Seleccione el establecimiento en el que quiere reservar.</p>
             
-            <form>
-                
-                <label>Seleccione el establecimiento en el que quiere reservar.</label>
-                <select className="form-select" name="Canchas">
-                        {
-                            stadiums.map(item =>(
-                                <option key="item.id" onClick={() => handleStadium(item.id)}>{item.name}</option>
-                            ))
-                        }                   
+            {StadiumList}
 
-                </select> <br></br>
-                <button className="btn btn-success" onClick={() => onFinish(stadiumId)}>
-                    Continuar
-                </button>
-            </form>
         </div>
     );
 
