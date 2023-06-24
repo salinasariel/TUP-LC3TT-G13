@@ -12,7 +12,7 @@ function FinishReserve() {
         <div className="backplate">
            
             <h3>Reserva confirmada.</h3>
-            <p>Usted reservo para el establecimiento {name}  el dia {day && day}</p>
+            <p>Usted reservo para el establecimiento {name}  el dia {day && day}.</p>
             
             
 

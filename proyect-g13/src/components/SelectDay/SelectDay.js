@@ -26,11 +26,11 @@ const SelectDay = () => {
             <h3>Reservar en {name}</h3>
             <p>Por favor seleccione el dia que desea reservar </p>
             
-            {monday ? (<button onClick={okReserve} className="btn btn-success">LUNES</button>) : (<button disabled className="btn btn-danger">LUNES</button>)}
-            {tuesday ? (<button onClick={okReserve} className="btn btn-success">MARTES</button>) : (<button disabled className="btn btn-danger">MARTES</button>)}
+            {monday ? (<button onClick={() => okReserve("lunes")} className="btn btn-success">LUNES</button>) : (<button disabled className="btn btn-danger">LUNES</button>)}
+            {tuesday ? (<button onClick={() => okReserve("martes")} className="btn btn-success">MARTES</button>) : (<button disabled className="btn btn-danger">MARTES</button>)}
             {wednesday ? (<button onClick={() => okReserve("miercoles")} className="btn btn-success">MIERCOLES</button>) : (<button onClick={() => okReserve("miercoles")} disabled className="btn btn-danger">MIERCOLES</button>)}
-            {thursday ? (<button onClick={okReserve} className="btn btn-success">JUEVES</button>) : (<button disabled className="btn btn-danger">JUEVES</button>)}
-            {friday ? (<button onClick={okReserve} className="btn btn-success">VIERNES</button>) : (<button disabled className="btn btn-danger">VIERNES</button>)}
+            {thursday ? (<button onClick={() => okReserve("jueves")} className="btn btn-success">JUEVES</button>) : (<button disabled className="btn btn-danger">JUEVES</button>)}
+            {friday ? (<button onClick={() => okReserve("viernes")} className="btn btn-success">VIERNES</button>) : (<button disabled className="btn btn-danger">VIERNES</button>)}
             <br></br><button onClick={handleClick} className='btn btn-secondary justify-content-center mt-2 ' href='/homepage' >Regresar</button>
 
         </div>
