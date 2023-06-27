@@ -32,7 +32,7 @@ const Reserve = ({ onFinish }) =>{
     })
 
     return(
-        <div className="backplate">
+        <div className="backplate scale-up-center">
             <h1>Reservar</h1>
             <p>Seleccione el establecimiento en el que quiere reservar.</p>
             

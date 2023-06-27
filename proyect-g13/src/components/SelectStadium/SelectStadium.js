@@ -14,7 +14,7 @@ function SelectStadium({id, name, monday, tuesday, wednesday, thursday, friday, 
     navigate('/selectday', { state: { id, name , monday, tuesday, wednesday, thursday, friday }});
   };  
   return (
-    <div className='cube'>
+    <div className='cube scale-up-center'>
         <h4>{name}</h4>
         <p>{address}</p>
         

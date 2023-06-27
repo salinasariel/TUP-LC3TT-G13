@@ -21,7 +21,7 @@ const SelectDay = () => {
     return(
         <>
         <MenuBar/> 
-        <div className="backplate">
+        <div className="backplate scale-up-center">
            
             <h3>Reservar en {name}</h3>
             <p>Por favor seleccione el dia que desea reservar </p>
