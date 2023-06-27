@@ -1,31 +1,37 @@
 import "./Login.css"
 import MenuBarLogin from "../MenuBar/MenuBarLogin";
-import react, { useEffect } from "react"
+import react , { useEffect } from "react"
 import { useState } from "react"
 import { Button} from "react-bootstrap"
 import { useNavigate } from "react-router-dom";
 import { toast } from 'react-toastify';
+
 
 const Login = () => {
     
     const [name, setName] = useState("")
     const [password, setPassword] = useState("")
     const navigate = useNavigate()
-        
+
+    
+    const url = new URL('https://644bfc2317e2663b9dfd613c.mockapi.io/api/v1/users');
+    url.searchParams.append('email', name);
+    
     useEffect(()=>{
+     
         sessionStorage.clear()
-    }, [])
+    }, []);
     
     const handleSubmit = (e) => {
         e.preventDefault()
         if(validated()){
-            fetch("https://644bfc2317e2663b9dfd613c.mockapi.io/api/v1/users/"+ name, {
+            fetch(url , {
                method: 'GET',
-               headers: {'content-type':'application/json'}
+               headers: {'content-type':'application/json'},
             })
             .then(response => {
                 return response.json()})
-            .then(result => {
+            .then(result => {                
                 if (Object.keys(result).length===0) {
                     toast.error('Ingrese un usuario existente')
                 }else{
@@ -38,8 +44,8 @@ const Login = () => {
                     }
                 }
             })
-            .catch(err => {
-                toast.err("Error al logearse :"+err.message)
+            .catch(error => {
+                toast.error("Error al logearse :"+error.message)
             })
         }
 
@@ -52,6 +58,7 @@ const Login = () => {
         }if (password === "" || password === null) {
             result = false
             toast.warning("Intruduzca su contrasenia de usuario")
+            
         }
         return result
     }
