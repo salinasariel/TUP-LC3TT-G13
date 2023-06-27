@@ -6,6 +6,7 @@ import HomePage from '../HomePage/HomePage'
 import SelectDay from '../SelectDay/SelectDay'
 import Register from '../Login/Register'
 import FinishReserve from '../FinishReserve/FinishReserve'
+import OkReserve from '../OkReserve/OkReserve'
 
 const AppRouter = () => {
   // const navigate = useNavigate()
@@ -24,6 +25,7 @@ const AppRouter = () => {
         <Route path='/homepage' element={<HomePage/>}/>
         <Route path='/selectday' element={<SelectDay/>}/>
         <Route path='/finishreserve' element={<FinishReserve/>}/>
+        <Route path='/okreserve' element={<OkReserve />}/>
       </Routes>
     </BrowserRouter>
   )
