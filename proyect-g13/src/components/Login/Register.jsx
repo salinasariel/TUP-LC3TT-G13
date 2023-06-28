@@ -48,9 +48,9 @@ function Register() {
                        onChange={e=> setPassword(e.target.value)}
                         placeholder="Contraseña" class="contrasenia form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" type="password"></input>
                     <button class="btn btn-light justify-content-center mt-2 ">Registrarse</button> <br></br>
-                    
+                    <a  class="register ml-2" href="/">Ya tengo una cuenta</a>
                 </form>
-                <a  class="register ml-2" href="/">Ya tengo una cuenta</a>
+                
             </section>
         </>
   )
