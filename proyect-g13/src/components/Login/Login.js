@@ -113,9 +113,22 @@ const Login = () => {
       for (const user of users) {
         if (user.email === email && user.password === password) {
           setLoginStatus('Inicio de sesión exitoso');
-          navigate('/homepage')
+          if(user.role ===3){
+            navigate('/homepage')
+            
+          }
+          if(user.role ===2){
+            navigate('/ownerpanel')
+            
+          }
+          if(user.role ===1){
+            navigate('/adminpanel')
+            
+          }
+          
           return;
         }
+        
         
       }
 

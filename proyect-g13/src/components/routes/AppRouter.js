@@ -7,6 +7,8 @@ import SelectDay from '../SelectDay/SelectDay'
 import Register from '../Login/Register'
 import FinishReserve from '../FinishReserve/FinishReserve'
 import OkReserve from '../OkReserve/OkReserve'
+import OwnerPanel from '../OwnerPanel/OwnerPanel'
+import AdminPanel from '../AdminPanel/AdminPanel'
 
 const AppRouter = () => {
   // const navigate = useNavigate()
@@ -26,6 +28,8 @@ const AppRouter = () => {
         <Route path='/selectday' element={<SelectDay/>}/>
         <Route path='/finishreserve' element={<FinishReserve/>}/>
         <Route path='/okreserve' element={<OkReserve />}/>
+        <Route path='/ownerpanel' element={<OwnerPanel/>}/>
+        <Route path='/adminpanel' element={<AdminPanel/>}/>
       </Routes>
     </BrowserRouter>
   )

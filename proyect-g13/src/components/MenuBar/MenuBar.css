@@ -12,3 +12,16 @@
     
 }
 .scale-up-vertical-top{animation:scale-up-vertical-top 0.4s linear} @keyframes scale-up-vertical-top{0%{transform:scaleY(.4);transform-origin:center top}100%{transform:scaleY(1);transform-origin:center top}}
+.nag{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.exit{
+    width: 50px;
+    margin-left: 10px;
+    
+}
+.padi{
+    margin: 20px;
+}
