@@ -27,20 +27,20 @@ const Login = () => {
 
       for (const user of users) {
         if (user.email === email && user.password === password) {
-          alert('Inicio de sesión exitoso');
+          
           if(user.role ==="3"){
             navigate('/homepage')
-            
+            return
           }
           if(user.role ==="2"){
             navigate('/ownerpanel')
-            
+            return
           }
           if(user.role ==="1"){
             navigate('/adminpanel')
-            
+            return
           }
-          
+          alert('Inicio de sesión exitoso');
           return;
         }
         
