@@ -16,7 +16,7 @@ const HomePage = ({ onLogout }) =>{
     return(
         <>
             <MenuBar/>
-            {stadiumId == -1
+            {stadiumId === -1
             ? <Reserve onFinish={handleReserve}/>
             : <SelectDay stadiumId={stadiumId}/>
             }

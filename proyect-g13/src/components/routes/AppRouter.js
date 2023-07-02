@@ -1,5 +1,5 @@
-import React, {useEffect, useState} from 'react'
-import { BrowserRouter ,Switch, Link, Route, Routes, useNavigate } from 'react-router-dom'
+
+import { BrowserRouter ,Route, Routes } from 'react-router-dom'
 
 import Login from '../Login/Login'
 import HomePage from '../HomePage/HomePage'
@@ -11,13 +11,7 @@ import OwnerPanel from '../OwnerPanel/OwnerPanel'
 import AdminPanel from '../AdminPanel/AdminPanel'
 
 const AppRouter = () => {
-  // const navigate = useNavigate()
-  // useEffect(() =>{
-  //   let username = sessionStorage.getItem('usuario')
-  //   if (username === '' || username === null) {
-  //     navigate('/')
-  //   }
-  // }, [])
+
 
   return (
     <BrowserRouter>

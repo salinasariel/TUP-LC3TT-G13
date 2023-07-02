@@ -1,9 +1,23 @@
 import "./Login.css"
 import { useNavigate } from "react-router-dom";
-// import { toast } from 'react-toastify';
 import React, { useState } from 'react';
 import axios from 'axios';
 import MenuBarLogin from "../MenuBar/MenuBarLogin";
+
+/* EXPLICACION COMPONENTE LOGIN
+definimos un componente de función llamado Login utilizando React Hooks. En este componente, se manejan los estados de email y password.
+
+Las funciones handleEmailChange y handlePasswordChange se utilizan para actualizar los valores de estado correspondientes cuando hay cambios en los campos de correo electrónico y contraseña, respectivamente.
+
+La función handleLogin se ejecuta cuando se envía el formulario de inicio de sesión. Primero, se previene el comportamiento predeterminado del evento de envío. Luego, se realiza una solicitud GET a una API utilizando Axios para obtener una lista de usuarios.
+
+Después de obtener la lista de usuarios, se recorre cada usuario y se verifica si las credenciales de correo electrónico y contraseña coinciden con alguna de las entradas de la lista. Si se encuentra una coincidencia, se realiza una redirección a diferentes rutas según el rol del usuario utilizando useNavigate de React Router.
+
+Si el rol es "3", el usuario es redirigido a la página /homepage. Si el rol es "2", el usuario es redirigido a la página /ownerpanel. Si el rol es "1", el usuario es redirigido a la página /adminpanel. Si no hay una coincidencia de credenciales, se muestra una alerta de "Credenciales incorrectas".
+
+En caso de cualquier error durante el proceso de inicio de sesión, se muestra una alerta de "Error al realizar el inicio de sesión".
+
+El componente Login devuelve JSX que representa el formulario de inicio de sesión. Hay campos de entrada para el correo electrónico y la contraseña. Al enviar el formulario, se llama a la función handleLogin. También se muestra un enlace para registrarse. */
 
 const Login = () => {
   const [email, setEmail] = useState('');
@@ -67,7 +81,6 @@ const Login = () => {
           </div>
           
           <div>
-            
             <input placeholder="Contraseña" class="contrasenia form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" type="password" value={password} onChange={handlePasswordChange} required />
           </div>
           <button class="btn btn-success justify-content-center mt-2 " type="submit">Iniciar sesión</button>
