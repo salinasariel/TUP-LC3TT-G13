@@ -1,7 +1,7 @@
 import "./MenuBar.css"
 import Logo from "../../../src/Img/logoFootbal.png"
 
-function MenuBarLogin()  {
+const MenuBarLogin= () =>  {
   return (
     <nav  class="scale-up-vertical-top navbar navbar-expand-lg navbar-light backcolor">
       <div>

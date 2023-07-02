@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import React, { useState } from 'react';
 import axios from 'axios';
 import MenuBarLogin from "../MenuBar/MenuBarLogin";
+import { toast, ToastContainer } from "react-toastify";
 
 /* EXPLICACION COMPONENTE LOGIN
 definimos un componente de función llamado Login utilizando React Hooks. En este componente, se manejan los estados de email y password.
@@ -61,10 +62,24 @@ const Login = () => {
         
       }
 
-      alert('Credenciales incorrectas');
+      toast.warn('Credenciales incorrectas', {position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",});
     } catch (error) {
       console.log(error);
-      alert('Error al realizar el inicio de sesión');
+      toast.warn('Error al realizar el inicio de sesión', {position: "top-right",
+      autoClose: 5000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      theme: "light",});
     }
   };
 
@@ -87,7 +102,7 @@ const Login = () => {
         </form>
         <a  class="" href="/register">Registrarme.</a>
       </div>
-      
+      <ToastContainer/>
     </div>
   );
 };

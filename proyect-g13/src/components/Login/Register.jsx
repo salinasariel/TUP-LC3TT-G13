@@ -1,6 +1,7 @@
 import React, { useRef, useState } from 'react'
 import MenuBarLogin from '../MenuBar/MenuBarLogin'
 import { useNavigate } from 'react-router-dom'
+import { toast, ToastContainer } from 'react-toastify';
 
 /*EXPLICACION DEL COMPONENTE REGISTER
  definimos un componente de función Register que utiliza React Hooks para manejar el estado de diferentes variables, como password, confirmPassword, email y role.
@@ -17,7 +18,7 @@ const Register = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [email, setEmail] = useState("")
   const navigate = useNavigate()
-  const [role, setRole] = useState ('')
+  const [role, setRole] = useState('')
   const roleRef = useRef(null)
 
   const handlePasswordChange = (e) => {
@@ -33,43 +34,93 @@ const Register = () => {
   const handleRoleChange = (e) => {
     setRole(e.target.value);
   };
-
+  const [isDelayedActionComplete, setDelayedActionComplete] = useState(false);
   const handleOnSubmit = (e) => {
     e.preventDefault();
     if (handleValidation()) {
-      let registerNeeded = {email, password,role}
+      let registerNeeded = { email, password, role }
+
+      fetch("https://644bfc2317e2663b9dfd613c.mockapi.io/api/v1/users", {
+        method: "POST",
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify(registerNeeded)
+      }).then((response) => {
         
-       fetch("https://644bfc2317e2663b9dfd613c.mockapi.io/api/v1/users", {
-            method:"POST",
-            headers:{'content-type':'application/json'},
-            body:JSON.stringify(registerNeeded)
-        }).then((response)=>{
-          alert('Registrado satisfactoriamente')
-            navigate('/')
-        }).catch(err => {
-          alert("Hubo un error :"+err.message)
+        toast.success('Registrado satisfactoriamente', {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
         })
+        setTimeout(() => {
+          navigate('/')
+          setDelayedActionComplete(true);
+        }, 3000);
+        
+      }).catch(err => {
+        toast.error("Hubo un error :" + err.message, {
+          position: "top-right",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        })
+      })
 
     };
 
-    
-    
+
+
   };
 
-  const handleValidation = () =>{
+  const handleValidation = () => {
     let result = true
-    if(password.length < 6 || password.length > 20  ) {
+    if (password.length < 6 || password.length > 20) {
       result = false
-      alert('La contraseña no puede tener menos de 6 caracteres y mas de 20');
-    };     
+      toast.warn('Ingrese una contraseña entre 6 y 20 caracteres.', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+    };
     if (password !== confirmPassword) {
       result = false
-      alert('Las contraseñas no coinciden');
+      toast.warn('Las contraseñas no coinciden', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
     };
     if (role !== "2" && role !== "3") {
       result = false
       roleRef.current.focus()
-      alert("Seleccione un rol")
+      toast.warn("Seleccione un rol", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light"
+      })
     };
     return result
   };
@@ -77,58 +128,58 @@ const Register = () => {
 
   return (
 
-      <>
+    <>
 
-            <MenuBarLogin />
-            <section >
-            <form className="form scale-up-center" onSubmit={handleOnSubmit}>
+      <MenuBarLogin />
+      <section >
+        <form className="form scale-up-center" onSubmit={handleOnSubmit}>
 
-         <div>
+          <div>
             <h1 class="titelLog">Registrarme</h1>
             <input
-            required
-            value={email}
-            onChange={e=> setEmail(e.target.value)}
-            type="email" placeholder='Email' class="email form-control"
+              required
+              value={email}
+              onChange={e => setEmail(e.target.value)}
+              type="email" placeholder='Email' class="email form-control"
             />
-         </div>
-            
-        <div>
+          </div>
+
+          <div>
             <label htmlFor="password"></label>
             <input className='form-control" aria-label'
-                type="password"
-                id="password"
-                value={password}
-                onChange={handlePasswordChange}
-                placeholder='Contraseña'  class="paswordd form-control"
+              type="password"
+              id="password"
+              value={password}
+              onChange={handlePasswordChange}
+              placeholder='Contraseña' class="paswordd form-control"
             />
-        </div>
-         
-        <div>
-        <label htmlFor="confirmPassword"></label>
-        <input
-          type="password"
-          id="confirmPassword"
-          value={confirmPassword}
-          onChange={handleConfirmPasswordChange}
-          placeholder='Confirmar Contraseña:'  class="password form-control"/>
+          </div>
 
-      <div>
-        <label htmlFor="role" className='justify-content-end'></label>
-        <select ref={roleRef} id="role" className='btn btn-light justify-content-center mt-3' value={role} onChange={handleRoleChange}>
-          <option>Seleccione Rol</option>
-          <option value='2'>Usuario</option>
-          <option value='3'>Dueño</option>
-        </select>
-      </div>
+          <div>
+            <label htmlFor="confirmPassword"></label>
+            <input
+              type="password"
+              id="confirmPassword"
+              value={confirmPassword}
+              onChange={handleConfirmPasswordChange}
+              placeholder='Confirmar Contraseña:' class="password form-control" />
 
-      </div>
-      <button class="btn btn-light justify-content-center mt-3 " type="submit">Registrar</button>
-    </form>
-    </section>
+            <div>
+              <label htmlFor="role" className='justify-content-end'></label>
+              <select ref={roleRef} id="role" className='btn btn-light justify-content-center mt-3' value={role} onChange={handleRoleChange}>
+                <option>Seleccione Rol</option>
+                <option value='3'>Usuario</option>
+                <option value='2'>Dueño</option>
+              </select>
+            </div>
 
+          </div>
+          <button class="btn btn-light justify-content-center mt-3 " type="submit">Registrar</button>
+        </form>
+      </section>
+      <ToastContainer />
     </>
-    
+
   );
 };
 

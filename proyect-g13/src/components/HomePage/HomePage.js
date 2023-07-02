@@ -1,6 +1,3 @@
-
-
-
 import { useState } from "react";
 import MenuBar from "../MenuBar/MenuBar";
 import Reserve from "../Reserve/Reserve";

@@ -3,6 +3,7 @@ import MenuBar from '../MenuBar/MenuBar'
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import { toast, ToastContainer } from 'react-toastify';
 
 /*EXPLICACION DEL FINISHRESERVE
 El componente FinishReserve nos muestra un formulario para confirmar una reserva en un establecimiento. Este Comienza importando los hooks necesarios y define las variables de estado utilizando useLocation y useNavigate. Luego, se definen las funciones handleClick y okReserve.
@@ -13,7 +14,7 @@ Si la solicitud PUT se completa con éxito, el componente navega a la página "/
 
 En el bloque de retorno, se muestra el formulario de confirmación de reserva, que incluye el nombre del establecimiento y el día seleccionado. Los botones "Confirmar" y "Regresar" llaman a las funciones correspondientes al hacer clic. */
 
-function FinishReserve()  {
+const FinishReserve = () =>  {
   const location = useLocation();
   const { id, name, day } = location.state;
   const navigate = useNavigate();
@@ -23,8 +24,22 @@ function FinishReserve()  {
   const okReserve = () => {
     const idModify = id; 
     //const dayModify = '{day}';
-    const successMessage = 'Su reserva fue exitosa, establecimiento {name} el dia {day}.'
-    const errorMessage = 'Su reserva tuvo un error. Intente nuevamente.';
+    const successMessage = toast.success('Su reserva fue exitosa, establecimiento {name} el dia {day}.', {position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",})
+    const errorMessage = toast.success('Su reserva tuvo un error. Intente nuevamente.', {position: "top-right",
+    autoClose: 5000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    theme: "light",})
     const updatedDay = {
       [day]: false 
     };
@@ -51,7 +66,7 @@ function FinishReserve()  {
 
         <button onClick={okReserve} className='btn btn-success'>Confirmar</button>
         <button onClick={handleClick} className='btn btn-secondary justify-content-center mt-2 ' href='/homepage' >Regresar</button>
-
+        <ToastContainer/>
       </div>
     </>
   )

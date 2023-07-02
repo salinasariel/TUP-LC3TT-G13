@@ -14,7 +14,7 @@ El componente OkReserve devuelve un JSX que representa la confirmación de reser
 
 Se utiliza el componente MenuBar para mostrar la barra de menú en la parte superior de la página.*/ 
 
-function OkReserve() {
+const OkReserve= () => {
   
   const navigate = useNavigate();
   const handleClick = () => {
