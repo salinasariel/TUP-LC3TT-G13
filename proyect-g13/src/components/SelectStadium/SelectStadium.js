@@ -13,7 +13,7 @@ Cuando se hace clic en el botón, se ejecuta la función handleClick. Esta funci
 En resumen, este componente representa la información básica de una cancha y permite al usuario ver la disponibilidad de las canchas al hacer clic en el botón "Ver Disponibilidad".*/
   
 
-function SelectStadium({id, name, monday, tuesday, wednesday, thursday, friday, address}) {
+function SelectStadium ({id, name, monday, tuesday, wednesday, thursday, friday, address}){
   const navigate = useNavigate();
 
   const handleClick = () => {
@@ -23,7 +23,6 @@ function SelectStadium({id, name, monday, tuesday, wednesday, thursday, friday, 
     <div className='cube scale-up-center'>
         <h4>{name}</h4>
         <p>{address}</p>
-        
         <button onClick={handleClick}  className='btn btn-light justify-content-center mt-2 '>Ver Disponibilidad</button>
         
     </div>

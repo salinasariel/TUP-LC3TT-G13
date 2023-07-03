@@ -63,7 +63,7 @@ const Login = () => {
         
       }
 
-      toast.warn('Credenciales incorrectas', {position: "top-right",
+      toast.warn('Credenciales Incorrectas', {position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,
       closeOnClick: true,
@@ -73,7 +73,7 @@ const Login = () => {
       theme: "light",});
     } catch (error) {
       console.log(error);
-      toast.warn('Error al realizar el inicio de sesión', {position: "top-right",
+      toast.warn('Error al realizar el Inicio de Sesión', {position: "top-right",
       autoClose: 5000,
       hideProgressBar: false,
       closeOnClick: true,
@@ -95,14 +95,13 @@ const Login = () => {
         <p>Ingrese sus credenciales para continuar.</p>
         <form  onSubmit={handleLogin}>
           <div>
-            
             <input placeholder="Usuario" class="usuario_estilo form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" type="email" value={email} onChange={handleEmailChange} required />
           </div>
           
           <div>
             <input placeholder="Contraseña" class="contrasenia form-control" aria-label="Default" aria-describedby="inputGroup-sizing-default" type="password" value={password} onChange={handlePasswordChange} required />
           </div>
-          <button class="btn btn-success justify-content-center mt-2 " type="submit">Iniciar sesión</button>
+          <button class="btn btn-success justify-content-center mt-3 " type="submit">Iniciar sesión</button>
         </form>
         <button class="btn btn-secondary justify-content-center mt-3 " onClick={goRegister}>Registrarme</button>
       </div>

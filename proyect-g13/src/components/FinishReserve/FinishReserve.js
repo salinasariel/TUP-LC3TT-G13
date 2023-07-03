@@ -23,8 +23,7 @@ const FinishReserve = () =>  {
   };
   const okReserve = () => {
     const idModify = id; 
-    //const dayModify = '{day}';
-    const successMessage = toast.success('Su reserva fue exitosa, establecimiento {name} el dia {day}.', {position: "top-right",
+    const successMessage = toast.success('Su reserva fue exitosa, Establecimiento {name} el Dia {day}.', {position: "top-right",
     autoClose: 5000,
     hideProgressBar: false,
     closeOnClick: true,
@@ -62,7 +61,7 @@ const FinishReserve = () =>  {
       <div className="backplate scale-up-center">
 
         <h3>Confirmar su reserva.</h3>
-        <p>¿Desea reservar en el establecimiento {name} para el dia {day}?.</p>
+        <p>¿Desea reservar en el Establecimiento {name} para el Dia {day}?</p>
 
         <button onClick={okReserve} className='btn btn-success'>Confirmar</button>
         <button onClick={handleClick} className='btn btn-secondary justify-content-center mt-2 ' href='/homepage' >Regresar</button>

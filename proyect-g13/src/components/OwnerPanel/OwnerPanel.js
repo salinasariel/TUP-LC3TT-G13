@@ -5,6 +5,21 @@ import OwnerStadiumControl from '../OwnerStadiumControl/OwnerStadiumControl'
 import { useLocation, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
+/* EXPLICACION COMPONENTE OWNERPANEL
+Al principio del componente, se importan las dependencias necesarias y se declaran los estados iniciales utilizando el hook useState. También se utiliza el hook useEffect para realizar una llamada a la API y obtener la información de los estadios.
+
+El método 'getData' se utiliza para realizar la llamada a la API y obtener los datos de las canchas. Los datos se almacenan en el estado 'stadiums' utilizando la función 'setStadiums'.
+
+El método handleStadium se utiliza para manejar el evento de clic en una cancha. Imprime el ID de la cancha seleccionada y actualiza el estado stadiumId con dicho ID.
+
+El componente OwnerPanel obtiene la ubicación actual utilizando el hook useLocation. Se extraen los datos de ownerdata y admin de la ubicación actual.
+
+Se renderiza una lista de canchas utilizando el método map en el array 'stadiums'. La lista de canchas se filtra según el valor de ownerdata y se crea un componente OwnerStadiumControl para cada cancha.
+
+El componente muestra un formulario para agregar nuevos canchas. Cuando se envía el formulario, se realiza una llamada a la API utilizando el método axios.post para crear una nueva cancha.
+
+Finalmente, se muestra un botón para navegar al panel de administrador si admin es true.*/
+
 const OwnerPanel = () => {
 
   const [stadiums, setStadiums] = useState([])
@@ -25,9 +40,7 @@ const OwnerPanel = () => {
     console.log(id)
     setStadiumId(id);
   }
-  //const StadiumList = stadiums.map(item =>(
-  //    <option key="item.id" onClick={() => handleStadium(item.id)}>{item.name}</option>
-  //))
+ 
 
   const location = useLocation();
   const { ownerdata, admin } = location.state || {};
@@ -63,7 +76,7 @@ const OwnerPanel = () => {
       );
       window.location.reload();
       console.log('Estadio creado:', response.data);
-      // Aquí puedes hacer algo con la respuesta, como redirigir o actualizar la lista de estadios.
+      
     } catch (error) {
       console.error('Error al crear el estadio:', error);
     }

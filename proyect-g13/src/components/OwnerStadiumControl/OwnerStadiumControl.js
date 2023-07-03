@@ -6,16 +6,7 @@ import { navigate } from 'react-router-dom';
 
 const OwnerStadiumControl = ({ id, name, monday, tuesday, wednesday, thursday, friday, address }) => {
 
-    const [mondaydayS, setmonday] = useState(monday)
-    const [tuesdaydayS, setTuesday] = useState(tuesday)
-    const [wednesdayS, setWendesday] = useState(wednesday)
-    const [thursdayS, setThursdayS] = useState(thursday)
-    const [fridayS, setFridayS] = useState(friday)
-    
-
     const allowDay = (day) => {
-        
-        //const dayModify = '{day}';
 
         const updatedDay = {
             [day]: true
@@ -58,7 +49,6 @@ const OwnerStadiumControl = ({ id, name, monday, tuesday, wednesday, thursday, f
     };
     const blockDay = (day) => {
         
-        //const dayModify = '{day}';
         const updatedDay = {
             [day]: false
         };
@@ -83,6 +73,7 @@ const OwnerStadiumControl = ({ id, name, monday, tuesday, wednesday, thursday, f
                     setFridayS(false)
                 }
             })
+
             .catch(error => {
                 console.error(error);
                 toast.error("Ocuttio un error" + error, {
@@ -111,10 +102,10 @@ const OwnerStadiumControl = ({ id, name, monday, tuesday, wednesday, thursday, f
 
         <ToastContainer/>
         </div>
-    )
+    );
 
 
 
-}
+};
 
 export default OwnerStadiumControl
