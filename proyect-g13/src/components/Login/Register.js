@@ -177,8 +177,9 @@ const Register = () => {
 
           </div>
           <button class="btn btn-light justify-content-center mt-3 " type="submit">Registrar</button>
+          <button onClick={returntohome} className="btn btn-light justify-content-center mt-3 ">Regresar</button>
         </form>
-        <button onClick={returntohome} className="btn btn-light justify-content-center mt-3 ">Regresar</button>
+        
       </section>
       <ToastContainer />
     </>
