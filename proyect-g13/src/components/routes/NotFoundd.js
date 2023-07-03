@@ -8,7 +8,7 @@ const NotFoundd = () => {
     
 
     const goBackHandler = () => {
-        navigation("/login");
+        navigation("/");
     };
 
     return (

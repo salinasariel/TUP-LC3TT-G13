@@ -2,6 +2,7 @@
 import { BrowserRouter ,Route, Routes } from 'react-router-dom'
 
 import Login from '../Login/Login'
+import NotFoundd from './NotFoundd'
 import HomePage from '../HomePage/HomePage'
 import SelectDay from '../SelectDay/SelectDay'
 import Register from '../Login/Register'
@@ -11,7 +12,6 @@ import OwnerPanel from '../OwnerPanel/OwnerPanel'
 import AdminPanel from '../AdminPanel/AdminPanel'
 
 const AppRouter = () => {
-
 
   return (
     <BrowserRouter>

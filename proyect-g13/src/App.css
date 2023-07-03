@@ -1,6 +1,20 @@
 .App {
   text-align: center;
 }
+#light{
+  color: dark;
+}
+#dark{
+  color: white;
+}
+.switch{
+  display: flex;
+  width: 100vw;
+  height: 100px;
+  justify-content: center;
+  align-items: center;
+}
+#light 
 
 .App-logo {
   height: 40vmin;
@@ -14,16 +28,7 @@
   
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
+
 
 .App-link {
   color: #61dafb;
@@ -36,4 +41,165 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+/*login*/
+#dark .form{
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background-color: #001f02cf;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 10%;
+  padding: 30px;
+  border-radius: 30px;
+}
+
+#light .form{
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background-color: #81c784cf;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 10%;
+  padding: 30px;
+  border-radius: 30px;
+}
+.usuario_estilo{
+  margin-bottom: 5px;
+  font-style: oblique;
+}
+.login{
+  box-sizing: border-box;
+  padding: 0%;
+  margin: 0%;
+  }
+  .contrasenia{
+    margin-top: 5px;
+    font-style: oblique;
+  }
+  .register{
+    flex-direction: column;
+  align-self: flex-end;
+  padding-left: 7px;
+  
+  }
+  .titelLog{
+    font-weight: bold;
+    font-style: oblique;
+  }
+  
+  
+  .mesageError{
+  background-color: #c78981;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 20px;
+  padding: 30px;
+  border-radius: 30px;
+  }
+  .scale-up-center{animation:scale-up-center 0.3s; } @keyframes scale-up-center{ 0%{transform:scale(.5)} 100%{transform:scale(1)} }
+  
+  @media (max-width: 830px) {
+    .form{
+        margin-left: 5%;
+        margin-right: 5%;
+    }
+  }
+
+  /* menubar */
+#light .backcolor{
+    background-color: #81c784e5;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+
+#dark .backcolor{
+  background-color: #014406cf;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+}
+.pad{
+    padding-left: 30px;
+}
+.high{
+    width: 60px;
+    padding-left: 10px;
+    
+}
+.scale-up-vertical-top{animation:scale-up-vertical-top 0.4s linear} @keyframes scale-up-vertical-top{0%{transform:scaleY(.4);transform-origin:center top}100%{transform:scaleY(1);transform-origin:center top}}
+.nag{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.exit{
+    width: 50px;
+    margin-left: 10px;
+    
+}
+.padi{
+    margin: 20px;
+}
+
+/*reserve*/
+#light .backplate{
+  background-color: rgba(255, 255, 255, 0.848);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 2%;
+  padding: 30px;
+  border-radius: 30px;
+}
+#dark .backplate{
+  background-color: rgba(17, 17, 17, 0.848);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-left: 30%;
+  margin-right: 30%;
+  margin-top: 2%;
+  padding: 30px;
+  border-radius: 30px;
+}
+
+@media (max-width: 830px) {
+  .backplate{
+      margin-left: 5%;
+      margin-right: 5%;
+  };
+  
+  
+}
+button{
+  min-width: 150px;
+}
+
+/*selectstadium*/
+#light .cube{
+  background-color: #81c784e5;
+  padding: 15px;
+  border-radius: 15px;
+  width: 280px;
+}
+
+#dark .cube{
+  background-color: #014406cf;
+  padding: 15px;
+  border-radius: 15px;
+  width: 280px;
 }

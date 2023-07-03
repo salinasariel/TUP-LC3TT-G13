@@ -82,9 +82,12 @@ const Login = () => {
       theme: "light",});
     }
   };
+  const goRegister =()=>{
+    navigate('/register')
+  }
 
   return (
-    <div>
+    <div className="login">
       <MenuBarLogin />
       <div className="form scale-up-center">
         <h1 class="titelLog">Iniciar sesión</h1>
@@ -100,7 +103,7 @@ const Login = () => {
           </div>
           <button class="btn btn-success justify-content-center mt-2 " type="submit">Iniciar sesión</button>
         </form>
-        <a  class="" href="/register">Registrarme.</a>
+        <button class="btn btn-secondary justify-content-center mt-3 " onClick={goRegister}>Registrarme</button>
       </div>
       <ToastContainer/>
     </div>
