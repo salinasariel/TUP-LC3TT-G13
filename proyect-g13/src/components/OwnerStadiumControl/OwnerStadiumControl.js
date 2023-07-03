@@ -6,6 +6,12 @@ import { navigate } from 'react-router-dom';
 
 const OwnerStadiumControl = ({ id, name, monday, tuesday, wednesday, thursday, friday, address }) => {
 
+    const [mondaydayS, setmonday] = useState(monday)
+    const [tuesdaydayS, setTuesday] = useState(tuesday)
+    const [wednesdayS, setWendesday] = useState(wednesday)
+    const [thursdayS, setThursdayS] = useState(thursday)
+    const [fridayS, setFridayS] = useState(friday)
+
     const allowDay = (day) => {
 
         const updatedDay = {
