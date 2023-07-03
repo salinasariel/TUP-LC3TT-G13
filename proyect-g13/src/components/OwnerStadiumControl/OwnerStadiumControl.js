@@ -73,7 +73,7 @@ const OwnerStadiumControl = ({ id, name, monday, tuesday, wednesday, thursday, f
     };
 
     return (
-        <div className='cube scale-up-center'>
+        <div className='ownerstadium scale-up-center'>
             <h4>{name}</h4>
             <p>{address}</p>
             {monday ? (<button onClick={() => blockDay("monday")} className="btn btn-success">LUNES</button>) : (<button onClick={() => allowDay("monday")} className="btn btn-danger">LUNES</button>)}

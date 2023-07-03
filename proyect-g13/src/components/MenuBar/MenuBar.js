@@ -12,7 +12,7 @@ El componente MenuBar devuelve JSX que representa una barra de navegación.
 
 Hay un botón "Cerrar Sesión" representado por la etiqueta button. Al hacer clic en el botón, se llama a la función handleClick para redirigir al usuario a la página principal. */
 
-const MenuBar= () => {
+function MenuBar()  {
   const navigate = useNavigate();
   const handleClick = () => {
     navigate('/');

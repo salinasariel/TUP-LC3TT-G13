@@ -8,13 +8,13 @@ import { useState, useEffect } from 'react';
 import AdminStadiumControl from '../AdminStadiumControl/AdminStadiumControl';
 
 const AdminPanel= () => {
-
+  const ownerdata = "admin";
   const navigate = useNavigate();
   const goToOwner = () => {
-    navigate('/ownerpanel');
+    navigate('/ownerpanel',{state:{ownerdata: ownerdata, admin: true}});
   };
   const goToUser = () => {
-    navigate('/homepage');
+    navigate('/homepage',{state:{admin: true}});
   };
 
   const updatedDayTrue = {
@@ -115,7 +115,9 @@ const AdminPanel= () => {
 
         <h3>Panel de administrador.</h3>
         <button onClick={goToUser} className='btn btn-warning'>Vista de Usuario</button>
-        <button onClick={goToOwner} className='btn btn-warning'>Vista de Dueño</button> <br></br>
+        <button onClick={goToOwner} className='btn btn-warning'>Vista de Dueño</button>
+
+         <br></br>
 
         <button onClick={allowAllDays} className='btn btn-success'>Habilitar dias</button>
         <button onClick={cancelAllDays} className='btn btn-danger'>Bloquear dias</button>

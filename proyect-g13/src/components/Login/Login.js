@@ -44,7 +44,7 @@ const Login = () => {
         if (user.email === email && user.password === password) {
           
           if(user.role ==="3"){
-            navigate('/homepage')
+            navigate('/homepage',{state:{admin: false}})
             return
           }
           if(user.role ==="2"){

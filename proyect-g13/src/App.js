@@ -15,7 +15,7 @@ const App = () => {
       <div id={theme}>
         <AppRouter/>
         <div className='switch'>
-          <label>{theme === "light" ? "Light mode" : "Dark mode"}</label>
+          {/* <label>{theme === "light" ? "Light mode" : "Dark mode"}</label> */}
           <ReactSwitch onChange={toggleTheme} checked={theme === "dark"}/>
         </div>
       </div>

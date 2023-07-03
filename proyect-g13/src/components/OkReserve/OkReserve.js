@@ -18,7 +18,7 @@ const OkReserve= () => {
   
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate('/homepage');
+    navigate('/homepage',{state:{admin: false}});
   };
   return (
     

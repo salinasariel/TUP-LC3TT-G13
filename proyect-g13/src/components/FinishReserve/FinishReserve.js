@@ -19,7 +19,7 @@ const FinishReserve = () =>  {
   const { id, name, day } = location.state;
   const navigate = useNavigate();
   const handleClick = () => {
-    navigate('/homepage');
+    navigate('/homepage',{state:{admin: false}});
   };
   const okReserve = () => {
     const idModify = id; 
