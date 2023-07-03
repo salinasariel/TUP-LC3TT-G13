@@ -1,5 +1,4 @@
 import React from 'react'
-import './SelectStadium.css'
 import { useNavigate } from 'react-router-dom';
 
 

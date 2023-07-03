@@ -1,5 +1,4 @@
 import SelectStadium from "../SelectStadium/SelectStadium";
-import "./Reserve.css";
 import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';

@@ -1,6 +1,4 @@
-import "./MenuBar.css"
 import Logo from "../../../src/Img/logoFootbal.png"
-import Reserve from "../Reserve/Reserve";
 import { useNavigate } from 'react-router-dom';
 /*EXPLICACION DEL COMPONENTE MenuBar
 creamos la función MenuBar que define un componente de función llamado 'MenuBar'.

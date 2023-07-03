@@ -1,4 +1,3 @@
-import "./MenuBar.css"
 import Logo from "../../../src/Img/logoFootbal.png"
 
 const MenuBarLogin= () =>  {
