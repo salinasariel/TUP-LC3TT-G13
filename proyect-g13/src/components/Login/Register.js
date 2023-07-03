@@ -176,7 +176,7 @@ const Register = () => {
             </div>
 
           </div>
-          <button class="btn btn-light justify-content-center mt-3 " type="submit">Registrar</button>
+          <button class="btn btn-success justify-content-center mt-3 " type="submit">Registrar</button> <br></br>
           <button onClick={returntohome} className="btn btn-light justify-content-center mt-3 ">Regresar</button>
         </form>
         
