@@ -8,8 +8,7 @@ const MenuBarLogin= () =>  {
         <img class="high" src={Logo} />
         </div>
     
-    <div class=" collapse navbar-collapse pad" id="navbarNav">
-    </div>
+    <div class=" collapse navbar-collapse pad" id="navbarNav"></div>
   </nav>
   );
 }

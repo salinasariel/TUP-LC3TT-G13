@@ -12,7 +12,7 @@ El componente MenuBar devuelve JSX que representa una barra de navegación.
 
 Hay un botón "Cerrar Sesión" representado por la etiqueta button. Al hacer clic en el botón, se llama a la función handleClick para redirigir al usuario a la página principal. */
 
-function MenuBar()  {
+function MenuBar() {
   const navigate = useNavigate();
   const handleClick = () => {
     navigate('/');
@@ -20,14 +20,13 @@ function MenuBar()  {
   return (
     <nav  class=" navbar navbar-expand-lg navbar-light backcolor">
       <div>
-        <img class="high" src={Logo} />
+        <img class="high logo pagina" src={Logo} />
       </div>
     
     <div class="nag collapse navbar-collapse pad" id="navbarNav">
     
       <h4 className="titelLog">CanchitasGol APP</h4>
       <button onClick={handleClick} className='btn btn-danger btn-sm ml-auto custom-button padi'  >Cerrar Sesión</button>
-      
       
     </div>
   </nav>

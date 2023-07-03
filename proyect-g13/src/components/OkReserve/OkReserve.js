@@ -25,17 +25,13 @@ const OkReserve= () => {
     <div>
       <MenuBar/>
       <div className="backplate scale-up-center">
-      
-      <h1>Reserva confirmada.</h1>
-      <p>Gracias por utilizar nuestra plataforma.</p>
+      <h1>Reserva Confirmada.</h1>
+      <p>Gracias por utilizar nuestra Plataforma.</p>
       <button onClick={handleClick} className='btn btn-secondary justify-content-center mt-2 ' href='/homepage' >Regresar</button>
-      
-      
-
       </div>
     </div>
     
   )
-}
+};
 
 export default OkReserve

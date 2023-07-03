@@ -9,14 +9,10 @@ const OwnerStadiumControl = ({ id, name, monday, tuesday, wednesday, thursday, f
     //const [days, setDay] = useState(false)
     const navigate = useNavigate();
 
-    const deleteStadium = async () => {
-
-    };
+   
     
 
     const allowDay = (day) => {
-        
-        //const dayModify = '{day}';
 
         const updatedDay = {
             [day]: true
@@ -45,7 +41,6 @@ const OwnerStadiumControl = ({ id, name, monday, tuesday, wednesday, thursday, f
     };
     const blockDay = (day) => {
         
-        //const dayModify = '{day}';
         const updatedDay = {
             [day]: false
         };
@@ -56,6 +51,7 @@ const OwnerStadiumControl = ({ id, name, monday, tuesday, wednesday, thursday, f
                 console.log(response.data);
                 window.location.reload();
             })
+
             .catch(error => {
                 console.error(error);
                 toast.error("Ocuttio un error" + error, {
@@ -84,10 +80,10 @@ const OwnerStadiumControl = ({ id, name, monday, tuesday, wednesday, thursday, f
 
         <ToastContainer/>
         </div>
-    )
+    );
 
 
 
-}
+};
 
 export default OwnerStadiumControl
