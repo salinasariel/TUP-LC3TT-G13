@@ -32,7 +32,7 @@ const Login = () => {
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
   };
-
+  
   const handleLogin = async (e) => {
     e.preventDefault();
 
@@ -48,14 +48,16 @@ const Login = () => {
             return
           }
           if(user.role ==="2"){
-            navigate('/ownerpanel')
-            return
+            
+            const ownerdata = user.id;
+            navigate('/ownerpanel', {state:{ownerdata: ownerdata}})
+            
           }
           if(user.role ==="1"){
             navigate('/adminpanel')
             return
           }
-          alert('Inicio de sesión exitoso');
+          
           return;
         }
         

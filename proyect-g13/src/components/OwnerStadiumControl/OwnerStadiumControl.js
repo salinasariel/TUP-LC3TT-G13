@@ -2,6 +2,7 @@ import {React, useState} from 'react'
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import { toast, ToastContainer } from 'react-toastify';
+import { navigate } from 'react-router-dom';
 
 const OwnerStadiumControl = ({ id, name, monday, tuesday, wednesday, thursday, friday, address }) => {
 
