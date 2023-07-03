@@ -2,11 +2,19 @@
   text-align: center;
 }
 #light{
-  color: dark;
+  color: black;
+  
+  background-image: url("../src/Img/background.jpg");
+   
+  background-size: cover;
 }
 #dark{
   color: white;
+  background-image: url("../src/Img/background-darkmode.jpg");
+
+  background-size: cover;
 }
+
 .switch{
   display: flex;
   width: 100vw;
