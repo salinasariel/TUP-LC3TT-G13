@@ -18,8 +18,7 @@ const Register = () => {
   const [confirmPassword, setConfirmPassword] = useState('');
   const [email, setEmail] = useState("")
   const navigate = useNavigate()
-  const [role, setRole] = useState('')
-  const roleRef = useRef(null)
+  
 
   const handlePasswordChange = (e) => {
     setPassword(e.target.value);
@@ -31,13 +30,12 @@ const Register = () => {
     setConfirmPassword(e.target.value);
   };
 
-  const handleRoleChange = (e) => {
-    setRole(e.target.value);
-  };
+
   const [isDelayedActionComplete, setDelayedActionComplete] = useState(false);
   const handleOnSubmit = (e) => {
     e.preventDefault();
     if (handleValidation()) {
+      let role = "3";
       let registerNeeded = { email, password, role }
 
       fetch("https://644bfc2317e2663b9dfd613c.mockapi.io/api/v1/users", {
@@ -108,20 +106,7 @@ const Register = () => {
         theme: "light",
       });
     };
-    if (role !== "2" && role !== "3") {
-      result = false
-      roleRef.current.focus()
-      toast.warn("Seleccione un rol", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light"
-      })
-    };
+    
     return result
   };
   const returntohome=()=>{
@@ -168,11 +153,7 @@ const Register = () => {
 
             <div>
               <label htmlFor="role" className='justify-content-end'></label>
-              <select ref={roleRef} id="role" className='btn btn-light justify-content-center mt-3' value={role} onChange={handleRoleChange}>
-                <option>Seleccione Rol</option>
-                <option value='3'>Usuario</option>
-                <option value='2'>Dueño</option>
-              </select>
+              
             </div>
 
           </div>
